@@ -1,6 +1,11 @@
-module "gcp-init" {
-  source               = "../../modules/init"
-  labels               = var.labels
-  project_id           = var.gcp_project
-  kubernetes_namespace = var.kubernetes_namespace
+provider "google" {}
+
+module "example" {
+  source      = "../../modules/init"
+  app_id      = "potato"
+  environment = "dev"
+}
+
+output "module" {
+  value = module.example
 }
