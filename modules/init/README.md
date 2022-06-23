@@ -22,6 +22,7 @@ No modules.
 | [google_projects.app_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
 | [google_projects.kubernetes_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
 | [google_projects.network_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
+| [google_service_account.application_default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/service_account) | data source |
 
 ## Inputs
 
@@ -40,3 +41,4 @@ No modules.
 | <a name="output_kubernetes"></a> [kubernetes](#output\_kubernetes) | A map containing essentials about available Kubernetes cluster(s) ('project\_id'). |
 | <a name="output_labels"></a> [labels](#output\_labels) | Labels for use on managed resources (i.e. Kubernetes resources). |
 | <a name="output_networks"></a> [networks](#output\_networks) | A map containing essentials about available network(s) ('project\_id'). |
+| <a name="output_service_accounts"></a> [service\_accounts](#output\_service\_accounts) | A map containing essentials about application service account(s). |

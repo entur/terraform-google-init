@@ -14,6 +14,10 @@ locals {
     project_id = data.google_projects.network_projects.projects[0].project_id
   }
 
+  service_accounts = {
+    default = data.google_service_account.application_default
+  }
+
   is_production = try(data.google_projects.app_projects.projects[0].labels.is_prod, "false")
 }
 
@@ -27,4 +31,8 @@ data "google_projects" "kubernetes_projects" {
 # TODO: replace app_short and handle generation shifts
 data "google_projects" "network_projects" {
   filter = "lifecycleState:ACTIVE labels.app_short:network labels.environment:${var.environment}"
+}
+
+data "google_service_account" "application_default" {
+  account_id = "application@${local.app.project_id}.iam.gserviceaccount.com"
 }

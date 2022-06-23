@@ -29,6 +29,11 @@ output "networks" {
   value       = local.networks
 }
 
+output "service_accounts" {
+  description = "A map containing essentials about application service account(s)."
+  value       = local.service_accounts
+}
+
 output "is_production" {
   description = "Describes whether the environment in use is a production environment."
   value       = local.is_production
