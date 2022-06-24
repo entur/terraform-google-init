@@ -28,6 +28,7 @@ data "google_projects" "app_projects" {
 data "google_projects" "kubernetes_projects" {
   filter = "lifecycleState:ACTIVE labels.kubernetes:true labels.environment:${var.environment}"
 }
+
 # TODO: replace app_short and handle generation shifts
 data "google_projects" "network_projects" {
   filter = "lifecycleState:ACTIVE labels.app_short:network labels.environment:${var.environment}"

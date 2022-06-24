@@ -30,6 +30,8 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+tfplan
+*tfplan*
 
 # Ignore CLI configuration files
 .terraformrc
@@ -84,3 +86,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Local development settings and tmp files
+*.tmp
+.tfswitchrc
