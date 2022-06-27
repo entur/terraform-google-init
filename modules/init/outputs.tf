@@ -1,15 +1,40 @@
-output "service_account_key" {
-  value       = base64decode(google_service_account_key.base.private_key)
-  description = "The service account key generated on creation"
-  sensitive   = true
+output "environment" {
+  description = "Environment descriptor (i.e. 'dev', 'tst', 'prd')."
+  value       = var.environment
 }
 
-output "service_account_id" {
-  value       = google_service_account.base.name
-  description = "The service account ID"
+output "labels" {
+  description = "Labels for use on managed resources (i.e. Kubernetes resources)."
+  value = {
+    app         = local.app.name
+    app_id      = var.app_id
+    environment = var.environment
+    owner       = local.app.owner
+    team        = local.app.owner
+  }
 }
 
-output "service_account_email" {
-  value       = google_service_account.base.email
-  description = "The service account e-mail address"
+output "app" {
+  description = "A map containing essentials about the application (id', 'name', 'project_id', 'owner')."
+  value       = local.app
+}
+
+output "kubernetes" {
+  description = "A map containing essentials about available Kubernetes cluster(s) ('project_id')."
+  value       = local.kubernetes
+}
+
+output "networks" {
+  description = "A map containing essentials about available network(s) ('project_id')."
+  value       = local.networks
+}
+
+output "service_accounts" {
+  description = "A map containing essentials about application service account(s)."
+  value       = local.service_accounts
+}
+
+output "is_production" {
+  description = "Describes whether the environment in use is a production environment."
+  value       = local.is_production
 }

@@ -1,31 +1,39 @@
 locals {
-  app_name = substr(var.labels.app, 0, 25)
-  environment = substr(var.kubernetes_namespace, 0, 4)
-}
-
-provider "google" {
-  project = var.project_id
-}
-
-resource "google_service_account" "base" {
-  account_id   = length(var.service_account_id) > 0 ? var.service_account_id : "${local.app_name}-${local.environment}"
-  display_name = length(var.service_account_id) > 0 ? var.service_account_id : "${local.app_name}-${local.environment}"
-  description  = "Service account for ${var.labels.app}"
-  project      = var.project_id
-}
-
-resource "google_service_account_key" "base" {
-  service_account_id = google_service_account.base.name
-}
-
-resource "kubernetes_secret" "base" {
-  count = var.kubernetes_create_secret == true ? 1 : 0
-  metadata {
-    name      = length(var.kubernetes_secret_name) > 0 ? var.kubernetes_secret_name : "${local.app_name}-sa"
-    namespace = var.kubernetes_namespace
-    labels    = var.labels
+  app = {
+    id         = var.app_id
+    name       = data.google_projects.app_projects.projects[0].labels.app
+    owner      = data.google_projects.app_projects.projects[0].labels.owner
+    project_id = data.google_projects.app_projects.projects[0].project_id
   }
-  data = {
-    "credentials.json" = base64decode(google_service_account_key.base.private_key)
+
+  kubernetes = {
+    project_id = data.google_projects.kubernetes_projects.projects[0].project_id
   }
+
+  networks = {
+    project_id = data.google_projects.network_projects.projects[0].project_id
+  }
+
+  service_accounts = {
+    default = data.google_service_account.application_default
+  }
+
+  is_production = try(data.google_projects.app_projects.projects[0].labels.is_prod, "false")
+}
+
+data "google_projects" "app_projects" {
+  filter = "lifecycleState:ACTIVE labels.purpose:app-project labels.app_id:${var.app_id} labels.environment:${var.environment}"
+}
+
+data "google_projects" "kubernetes_projects" {
+  filter = "lifecycleState:ACTIVE labels.kubernetes:true labels.environment:${var.environment}"
+}
+
+# TODO: replace app_short and handle generation shifts
+data "google_projects" "network_projects" {
+  filter = "lifecycleState:ACTIVE labels.app_short:network labels.environment:${var.environment}"
+}
+
+data "google_service_account" "application_default" {
+  account_id = "application@${local.app.project_id}.iam.gserviceaccount.com"
 }
