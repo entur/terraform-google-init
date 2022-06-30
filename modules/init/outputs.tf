@@ -14,6 +14,11 @@ output "labels" {
   }
 }
 
+output "stuff" {
+  description = "More stuff."
+  value       = local.app
+}
+
 output "app" {
   description = "A mapppppp111 containing essentials about the application (id', 'name', 'project_id', 'owner')."
   value       = local.app
