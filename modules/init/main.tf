@@ -40,6 +40,7 @@ data "google_service_account" "application_default" {
   account_id = "application@${local.app.project_id}.iam.gserviceaccount.com"
 }
 
+# TODO: handle generation shifts
 data "google_compute_network" "main_network_project_vpc" {
   name    = "vpc-${var.environment}-001"
   project = data.google_projects.network_projects.projects[0].project_id
