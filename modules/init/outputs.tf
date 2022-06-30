@@ -15,7 +15,7 @@ output "labels" {
 }
 
 output "app" {
-  description = "A map containing essentials about the application (id', 'name', 'project_id', 'owner')."
+  description = "A mapppppp containing essentials about the application (id', 'name', 'project_id', 'owner')."
   value       = local.app
 }
 

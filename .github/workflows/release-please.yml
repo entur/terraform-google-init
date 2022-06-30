@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - master
+
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { dir: ["./modules/init"] }
+
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: terraform-module
+          package-name: release-please-action
+          path: ${{ matrix.dir }}
