@@ -22,6 +22,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [google_compute_network.main_network_project_vpc](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_network) | data source |
 | [google_projects.app_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
 | [google_projects.kubernetes_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
 | [google_projects.network_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
@@ -31,7 +32,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_app_id"></a> [app\_id](#input\_app\_id) | Application ID, yolo structure | `string` | n/a | yes |
+| <a name="input_app_id"></a> [app\_id](#input\_app\_id) | Application ID | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment descriptor (i.e. 'dev', 'tst', 'prd'). | `string` | n/a | yes |
 
 ## Outputs
@@ -43,6 +44,6 @@ No modules.
 | <a name="output_is_production"></a> [is\_production](#output\_is\_production) | Describes whether the environment in use is a production environment. |
 | <a name="output_kubernetes"></a> [kubernetes](#output\_kubernetes) | A map containing essentials about available Kubernetes cluster(s) ('project\_id'). |
 | <a name="output_labels"></a> [labels](#output\_labels) | Labels for use on managed resources (i.e. Kubernetes resources). |
-| <a name="output_networks"></a> [networks](#output\_networks) | A map containing essentials about available network(s) ('project\_id'). |
+| <a name="output_networks"></a> [networks](#output\_networks) | A map containing essentials about available network(s) ('project\_id', 'vpc\_name', 'vpc\_id'). |
 | <a name="output_service_accounts"></a> [service\_accounts](#output\_service\_accounts) | A map containing essentials about application service account(s). |
 <!-- END_TF_DOCS -->
