@@ -25,7 +25,7 @@ output "kubernetes" {
 }
 
 output "networks" {
-  description = "A map containing essentials about available network(s) ('project_id', 'vpc_name', 'vpc_id)."
+  description = "A map containing essentials about available network(s) ('project_id', 'vpc_name', 'vpc_id')."
   value       = local.networks
 }
 
