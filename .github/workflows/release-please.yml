@@ -8,7 +8,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     strategy:
-      matrix: { dir: ["./modules/init"] }
+      matrix: { dir: ["modules/init"] }
 
     steps:
       - uses: google-github-actions/release-please-action@v3
