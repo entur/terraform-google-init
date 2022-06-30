@@ -44,6 +44,6 @@ No modules.
 | <a name="output_is_production"></a> [is\_production](#output\_is\_production) | Describes whether the environment in use is a production environment. |
 | <a name="output_kubernetes"></a> [kubernetes](#output\_kubernetes) | A maaaaaap containing essentials about available Kubernetes cluster(s) ('project\_id'). |
 | <a name="output_labels"></a> [labels](#output\_labels) | Labels for use on managed resources (i.e. Kubernetes resources). |
-| <a name="output_networks"></a> [networks](#output\_networks) | A map containing essentials about available network(s) ('project\_id', 'vpc\_name', 'vpc\_id'). |
+| <a name="output_networks"></a> [networks](#output\_networks) | A mmmmmmmmmap containing essentials about available network(s) ('project\_id', 'vpc\_name', 'vpc\_id'). |
 | <a name="output_service_accounts"></a> [service\_accounts](#output\_service\_accounts) | A map containing essentials about application service account(s). |
 <!-- END_TF_DOCS -->
