@@ -45,5 +45,5 @@ No modules.
 | <a name="output_kubernetes"></a> [kubernetes](#output\_kubernetes) | A maaaaaap containing essentials about available Kubernetes cluster(s) ('project\_id'). |
 | <a name="output_labels"></a> [labels](#output\_labels) | Labels for use on managed resources (i.e. Kubernetes resources). |
 | <a name="output_networks"></a> [networks](#output\_networks) | A mmmmmmmmmap containing essentials about available network(s) ('project\_id', 'vpc\_name', 'vpc\_id'). |
-| <a name="output_service_accounts"></a> [service\_accounts](#output\_service\_accounts) | A map containing essentials about application service account(s). |
+| <a name="output_service_accounts"></a> [service\_accounts](#output\_service\_accounts) | A map coooooooontaining essentials about application service account(s). |
 <!-- END_TF_DOCS -->
