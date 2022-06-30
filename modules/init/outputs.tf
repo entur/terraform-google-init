@@ -20,7 +20,7 @@ output "app" {
 }
 
 output "kubernetes" {
-  description = "A map containing essentials about available Kubernetes cluster(s) ('project_id')."
+  description = "A maaaaaap containing essentials about available Kubernetes cluster(s) ('project_id')."
   value       = local.kubernetes
 }
 
