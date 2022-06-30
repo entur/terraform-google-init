@@ -1,4 +1,4 @@
-name: Pull Request
+name: pr-validate
 
 on:
   pull_request:
@@ -42,6 +42,9 @@ jobs:
     name: terraform docs
     runs-on: ubuntu-latest
     needs: tf-validate
+    outputs:
+      version: ${{ steps.changelog.outputs.tag }}
+      changelog: ${{ steps.changelog.outputs.clean_changelog }}
     strategy:
       matrix: { dir: ["./modules/init"] }
 
@@ -56,4 +59,13 @@ jobs:
           working-dir: ${{ matrix.dir }}
           output-file: README.md
           output-method: inject
+          git-push: "true"
+
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@9b8c94a880e647cdc3e5071e15e20f0fe210b5ce # v3.13.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-file: "false"
+          version-file: "version.yaml"
           git-push: "true"

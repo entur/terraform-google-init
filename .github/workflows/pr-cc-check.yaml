@@ -1,4 +1,4 @@
-name: Pull Request
+name: pr-cc-check
 
 on:
   pull_request:
