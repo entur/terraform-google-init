@@ -15,7 +15,7 @@ output "labels" {
 }
 
 output "stuff" {
-  description = "More stuff."
+  description = "More more stuff."
   value       = local.app
 }
 
