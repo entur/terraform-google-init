@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/entur/terraform-gcp-init-pr-flow/compare/v2.0.1...v2.1.0) (2022-07-01)
+
+
+### Features
+
+* make stuffffffff ([#14](https://github.com/entur/terraform-gcp-init-pr-flow/issues/14)) ([15accfb](https://github.com/entur/terraform-gcp-init-pr-flow/commit/15accfb1596763cc9be2a236764e33421975bed6))
+
 ## [2.0.1](https://github.com/entur/terraform-gcp-init-pr-flow/compare/v2.0.0...v2.0.1) (2022-06-30)
 
 
