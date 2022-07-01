@@ -1,4 +1,4 @@
-name: Pull Request
+name: Validate PR
 
 on:
   pull_request:
@@ -7,14 +7,10 @@ on:
     types:
       - opened
       - edited
-      - synchronize
-
-env:
-  TF_VERSION: 1.1.7
 
 jobs:
   pr-title-check:
-    name: conventional commit pr title
+    name: Ensure PR title complies with conventional commit conventions
     runs-on: ubuntu-latest
 
     steps:

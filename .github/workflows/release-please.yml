@@ -1,0 +1,17 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: google-github-actions/release-please-action@0fef4afcc574a384e0d8cee69de13e864b80dc6f # v3.2.7
+        with:
+          release-type: terraform-module
+          package-name: release-please-action
+          
