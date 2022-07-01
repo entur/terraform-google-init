@@ -9,3 +9,7 @@ module "example" {
   app_id      = "potato"
   environment = "dev"
 }
+
+output "module" {
+  value = module.example
+}
