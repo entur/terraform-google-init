@@ -1,5 +1,3 @@
-provider "google" {}
-
 module "example" {
   # This is for local reference only; if you're using this module as a published
   # module from GitHub, the 'source' parameter must refer to it's public location.
