@@ -1,11 +1,9 @@
-provider "google" {}
+# ci: x-release-please-start-version
 
-module "example" {
-  source      = "../../modules/init"
-  app_id      = "potato"
+module "init" {
+  source      = "github.com/entur/terraform-google-init//modules/init?ref=v0.1.0"
+  app_id      = "tfmodules"
   environment = "dev"
 }
 
-output "module" {
-  value = module.example
-}
+# ci: x-release-please-end
