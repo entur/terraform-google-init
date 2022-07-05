@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/entur/terraform-google-init/compare/v0.2.0...v0.2.1) (2022-07-05)
+
+
+### Bug Fixes
+
+* Add .gitignore linebreak (trigger release workflow) ([#9](https://github.com/entur/terraform-google-init/issues/9)) ([fab0899](https://github.com/entur/terraform-google-init/commit/fab0899f9bb75587f3b70793caf618aeb76301dd))
+
 ## [0.2.0](https://github.com/entur/terraform-google-init/compare/v0.1.0...v0.2.0) (2022-07-05)
 
 
