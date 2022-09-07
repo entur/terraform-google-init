@@ -8,6 +8,7 @@ locals {
 
   kubernetes = {
     project_id = data.google_projects.kubernetes_projects.projects[0].project_id
+    namespace  = data.google_projects.app_projects.projects[0].labels.app
   }
 
   networks = {
