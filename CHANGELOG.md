@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/entur/terraform-google-init/compare/v0.2.1...v0.3.0) (2022-09-07)
+
+
+### Features
+
+* Add output kubernetes.namespace ([#11](https://github.com/entur/terraform-google-init/issues/11)) ([e3ed94d](https://github.com/entur/terraform-google-init/commit/e3ed94d6474d8d1c33b1e4d7a401a58a6d4b2e02))
+
 ## [0.2.1](https://github.com/entur/terraform-google-init/compare/v0.2.0...v0.2.1) (2022-07-05)
 
 
