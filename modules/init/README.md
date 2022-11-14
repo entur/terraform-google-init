@@ -1,27 +1,49 @@
-# Init module for Google Cloud Platform
+# Usage
 
-A module for provisioning common access privileges and secrets for an application.
+<!-- BEGIN_TF_DOCS -->
+## Requirements
 
-* A service account
-* A service account key
-* A Kubernetes secret (default, but optional)
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=0.13.2 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >=4.26 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | >=4.26 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [google_compute_network.main_network_project_vpc](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_network) | data source |
+| [google_projects.app_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
+| [google_projects.kubernetes_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
+| [google_projects.network_projects](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/projects) | data source |
+| [google_service_account.application_default](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/service_account) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| kubernetes_create_secret | Whether to store the key in a secret in Kubernetes (optional) | string | true | no |
-| kubernetes_namespace | The Kubernetes namespace resources will be created in | string | n/a | no |
-| kubernetes_secret_name | A custom secret name to use instead of the default generated one (optional) | string | A generated name | no |
-| labels | The labels you wish to decorate resources with | map(string) | n/a | yes |
-| project_id | The GCP project ID | string | n/a | yes |
-| service_account_id | A custom service account ID to use instead of the default generated one (optional) | string | A generated ID | no |
+|------|-------------|------|---------|:--------:|
+| <a name="input_app_id"></a> [app\_id](#input\_app\_id) | Application ID | `string` | n/a | yes |
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment descriptor (i.e. 'dev', 'tst', 'prd'). | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| service_account_key | The service account key |
-| service_account_id | The service account ID |
-| service_account_email | The service account e-mail address |
-
+| <a name="output_app"></a> [app](#output\_app) | A map containing essentials about the application (id', 'name', 'project\_id', 'owner'). |
+| <a name="output_environment"></a> [environment](#output\_environment) | Environment descriptor (i.e. 'dev', 'tst', 'prd'). |
+| <a name="output_is_production"></a> [is\_production](#output\_is\_production) | Describes whether the environment in use is a production environment. |
+| <a name="output_kubernetes"></a> [kubernetes](#output\_kubernetes) | A map containing essentials about available Kubernetes cluster(s) ('project\_id', 'namespace'). |
+| <a name="output_labels"></a> [labels](#output\_labels) | Labels for use on managed resources (i.e. Kubernetes resources). |
+| <a name="output_networks"></a> [networks](#output\_networks) | A map containing essentials about available network(s) ('project\_id', 'vpc\_name', 'vpc\_id'). |
+| <a name="output_service_accounts"></a> [service\_accounts](#output\_service\_accounts) | A map containing essentials about application service account(s). |
+<!-- END_TF_DOCS -->
