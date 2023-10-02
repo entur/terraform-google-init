@@ -14,7 +14,7 @@ A data-only module that fetches information about essential platform and applica
 ### Example using the latest release
 ```
 module "init" {
-  source = "github.com/entur/terraform-google-init//modules/init?ref=v0.3.0"
+  source = "github.com/entur/terraform-google-init//modules/init?ref=v0.3.1"
   ...
 }
 ```

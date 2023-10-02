@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/entur/terraform-google-init/compare/v0.3.0...v0.3.1) (2023-10-02)
+
+
+### Bug Fixes
+
+* Remove filter restriction limiting module to use with standard app projects ([#14](https://github.com/entur/terraform-google-init/issues/14)) ([30578a2](https://github.com/entur/terraform-google-init/commit/30578a27f159243da023b70f3e6c4f7c55a393b8))
+
 ## [0.3.0](https://github.com/entur/terraform-google-init/compare/v0.2.1...v0.3.0) (2022-09-07)
 
 
