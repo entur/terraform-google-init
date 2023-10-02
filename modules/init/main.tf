@@ -25,7 +25,7 @@ locals {
 }
 
 data "google_projects" "app_projects" {
-  filter = "lifecycleState:ACTIVE labels.purpose:app-project labels.app_id:${var.app_id} labels.environment:${var.environment}"
+  filter = "lifecycleState:ACTIVE labels.app_id:${var.app_id} labels.environment:${var.environment}"
 }
 
 data "google_projects" "kubernetes_projects" {
