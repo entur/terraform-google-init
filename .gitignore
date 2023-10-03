@@ -89,3 +89,5 @@ Thumbs.db
 # Local development settings and tmp files
 *.tmp
 .tfswitchrc
+
+results.sarif
