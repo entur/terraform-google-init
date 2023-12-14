@@ -15,7 +15,7 @@ output "labels" {
 }
 
 output "app" {
-  description = "A map containing essentials about the application (id', 'name', 'project_id', 'owner')."
+  description = "A map containing essentials about the application (id', 'name', 'project_id', 'project_number', 'owner')."
   value       = local.app
 }
 
@@ -30,7 +30,7 @@ output "networks" {
 }
 
 output "service_accounts" {
-  description = "A map containing essentials about application service account(s)."
+  description = "A map containing essentials about application and project service account(s)"
   value       = local.service_accounts
 }
 
