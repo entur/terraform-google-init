@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://github.com/entur/terraform-google-init/compare/v0.3.1...v1.0.0) (2023-12-14)
+
+
+### Features
+
+* Add export of project number and default project sa for pubsub ([#18](https://github.com/entur/terraform-google-init/issues/18)) ([48484cf](https://github.com/entur/terraform-google-init/commit/48484cf420aa7d997ce7d8340f121af396498423))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([664b5ce](https://github.com/entur/terraform-google-init/commit/664b5ce4b252ab06f80e2c554bca2b46f3f8001a))
+
 ## [0.3.1](https://github.com/entur/terraform-google-init/compare/v0.3.0...v0.3.1) (2023-10-02)
 
 
