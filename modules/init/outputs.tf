@@ -30,7 +30,7 @@ output "networks" {
 }
 
 output "service_accounts" {
-  description = "A map containing essentials about application and project service account(s)"
+  description = "A map containing essentials about application and project service account(s)."
   value       = local.service_accounts
 }
 
