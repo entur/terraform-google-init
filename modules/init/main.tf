@@ -1,9 +1,10 @@
 locals {
   app = {
-    id         = var.app_id
-    name       = data.google_projects.app_projects.projects[0].labels.app
-    owner      = data.google_projects.app_projects.projects[0].labels.owner
-    project_id = data.google_projects.app_projects.projects[0].project_id
+    id             = var.app_id
+    name           = data.google_projects.app_projects.projects[0].labels.app
+    owner          = data.google_projects.app_projects.projects[0].labels.owner
+    project_id     = data.google_projects.app_projects.projects[0].project_id
+    project_number = data.google_projects.app_projects.projects[0].number
   }
 
   kubernetes = {
@@ -19,6 +20,11 @@ locals {
 
   service_accounts = {
     default = data.google_service_account.application_default
+    project_defaults = {
+      pubsub = {
+        email = "service-${data.google_projects.app_projects.projects[0].number}@gcp-sa-pubsub.iam.gserviceaccount.com"
+      }
+    }
   }
 
   is_production = try(data.google_projects.app_projects.projects[0].labels.is_prod, "false")
