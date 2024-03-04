@@ -4,7 +4,7 @@ locals {
     name           = data.google_projects.app_projects.projects[0].labels.app
     owner          = data.google_projects.app_projects.projects[0].labels.owner
     project_id     = data.google_projects.app_projects.projects[0].project_id
-    project_number = data.google_projects.app_projects.projects[0].number
+    project_number2 = data.google_projects.app_projects.projects[0].number
   }
 
   kubernetes = {
