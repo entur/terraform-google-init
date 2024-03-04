@@ -7,7 +7,7 @@ on:
 
 jobs:
   tf-tests:
-    uses: entur/gh-workflows/.github/workflows/release-please.yml@main
+    uses: entur/tmp-gh-workflows-2/.github/workflows/release-please.yml@main
     with:
       release_type: terraform-module
       version_bumped_files: |

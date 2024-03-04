@@ -11,6 +11,6 @@ on:
 
 jobs:
   tf-tests:
-    uses: entur/gh-workflows/.github/workflows/pr-tests-terraform.yml@main
+    uses: entur/tmp-gh-workflows-2/.github/workflows/pr-tests-terraform.yml@main
     with:
       module_dirs: '["./modules/init","./examples/init_test"]'

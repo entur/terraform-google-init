@@ -10,6 +10,6 @@ on:
 
 jobs:
   validate-pr:
-    uses: entur/gh-workflows/.github/workflows/pr-validation.yml@main
+    uses: entur/tmp-gh-workflows-2/.github/workflows/pr-validation.yml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
