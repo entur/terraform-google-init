@@ -1,0 +1,28 @@
+---
+version: 2
+updates:
+- package-ecosystem: "github-actions"
+  directories:
+    - /
+  groups:
+    minor-and-patch:
+      applies-to: version-updates
+      update-types:
+      - "minor"
+      - "patch"
+  schedule:
+    interval: "weekly"
+    time: "09:00"
+    timezone: "Europe/Oslo"
+    day: "monday"
+  open-pull-requests-limit: 2
+- package-ecosystem: terraform
+  directories:
+  - /examples/init
+  - /examples/init_test
+  - /modules/init
+  schedule:
+    interval: "daily"
+    time: "09:00"
+    timezone: "Europe/Oslo"
+  open-pull-requests-limit: 0  # Security-updates only
