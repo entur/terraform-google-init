@@ -11,6 +11,16 @@ locals {
     project_id = data.google_projects.kubernetes_projects.projects[0].project_id
     namespace  = data.google_projects.app_projects.projects[0].labels.app
   }
+  labels = merge(
+    {
+      app         = data.google_projects.app_projects.projects[0].labels.app
+      app_id      = data.google_projects.app_projects.projects[0].labels.app
+      environment = var.environment
+      owner       = data.google_projects.app_projects.projects[0].labels.owner
+      team        = data.google_projects.app_projects.projects[0].labels.owner
+    },
+    var.custom_labels
+  )
 
   networks = {
     project_id = data.google_projects.network_projects.projects[0].project_id

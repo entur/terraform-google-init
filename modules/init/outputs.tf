@@ -5,13 +5,7 @@ output "environment" {
 
 output "labels" {
   description = "Labels for use on managed resources (i.e. Kubernetes resources)."
-  value = {
-    app         = local.app.name
-    app_id      = var.app_id
-    environment = var.environment
-    owner       = local.app.owner
-    team        = local.app.owner
-  }
+  value       = local.labels
 }
 
 output "app" {

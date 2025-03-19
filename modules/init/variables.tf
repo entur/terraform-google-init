@@ -17,3 +17,9 @@ variable "environment" {
     error_message = "The environment descriptor should be a 3 character string (i.e. 'dev', 'tst', 'prd')."
   }
 }
+
+variable "custom_labels" {
+  description = "Custom labels to add/overwrite to the init.module.labels output."
+  type        = map(string)
+  default     = {}
+}
