@@ -34,6 +34,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_id"></a> [app\_id](#input\_app\_id) | Application ID | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment descriptor (i.e. 'dev', 'tst', 'prd'). | `string` | n/a | yes |
+| <a name="input_custom_labels"></a> [custom\_labels](#input\_custom\_labels) | Custom labels to add/overwrite to the init.module.labels output. | `map(string)` | `{}` | no |
 
 ## Outputs
 
