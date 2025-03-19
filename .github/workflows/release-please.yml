@@ -1,15 +1,29 @@
-name: Call Release Please
+name: release
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  tf-tests:
-    uses: entur/gh-workflows/.github/workflows/release-please.yml@main
-    with:
-      release_type: terraform-module
-      version_bumped_files: |
-        README.md
-        examples/init/main.tf
+  helm-release:
+    name: helm release
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        chart: [common]
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - name: Release
+        uses: googleapis/release-please-action@v4
+        with:
+          release-type: terraform-module
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: "modules/init"
