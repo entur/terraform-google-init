@@ -11,3 +11,7 @@ module "example" {
 output "module" {
   value = module.example
 }
+
+output "project_id" {
+  value = module.example.app.project_id
+}
