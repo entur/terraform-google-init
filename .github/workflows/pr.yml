@@ -20,7 +20,7 @@ jobs:
   terraform-lint-test:
     uses: entur/gha-terraform/.github/workflows/lint.yml@v1
     with:
-      directory: "examples/init_test"
+      directory: "fixture/init_test"
 
   tf-docs:
     name: Terraform documentation
