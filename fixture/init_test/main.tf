@@ -4,10 +4,17 @@ module "example" {
   # See README.md for instructions.
   # source     = "github.com/entur/terraform-google-init//modules/init?ref=vVERSION"
   source      = "../../modules/init"
-  app_id      = "potato"
+  app_id      = "tfmodules"
   environment = "dev"
+  custom_labels = {
+    foo = "bar"
+  }
 }
 
 output "module" {
   value = module.example
+}
+
+output "project_id" {
+  value = module.example.app.project_id
 }

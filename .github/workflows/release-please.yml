@@ -1,15 +1,14 @@
-name: Call Release Please
+name: release
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  tf-tests:
-    uses: entur/gh-workflows/.github/workflows/release-please.yml@main
+  release:
+    uses: entur/gha-meta/.github/workflows/release.yml@v1
     with:
-      release_type: terraform-module
-      version_bumped_files: |
-        README.md
-        examples/init/main.tf
+      path: "modules/init"
+      release_type: "terraform-module"

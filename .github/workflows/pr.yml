@@ -1,0 +1,35 @@
+name: Call Terraform Tests, Docs & Compliance
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-pr:
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: entur/gha-meta/.github/workflows/verify-pr.yml@v1
+  terraform-lint:
+    uses: entur/gha-terraform/.github/workflows/lint.yml@v1
+    with:
+      directory: "examples/init"
+  terraform-lint-test:
+    uses: entur/gha-terraform/.github/workflows/lint.yml@v1
+    with:
+      directory: "fixture/init_test"
+
+  terraform-documentation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@e47bfa196e79fa50987ef391be236d9d97b0c786 # v1.2.0
+        with:
+          working-dir: "modules/init"
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
