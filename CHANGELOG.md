@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/entur/terraform-google-init/compare/v1.1.0...v1.1.1) (2025-05-12)
+
+
+### Bug Fixes
+
+* app_id label ([#28](https://github.com/entur/terraform-google-init/issues/28)) ([31956be](https://github.com/entur/terraform-google-init/commit/31956bece97b05fde61f1a807e8db40794ed2835))
+
 ## [1.1.0](https://github.com/entur/terraform-google-init/compare/v1.0.0...v1.1.0) (2025-04-29)
 
 ### Features
