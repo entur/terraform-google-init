@@ -14,7 +14,7 @@ locals {
   labels = merge(
     {
       app         = data.google_projects.app_projects.projects[0].labels.app
-      app_id      = data.google_projects.app_projects.projects[0].labels.app
+      app_id      = data.google_projects.app_projects.projects[0].labels.app_id
       environment = var.environment
       owner       = data.google_projects.app_projects.projects[0].labels.owner
       team        = data.google_projects.app_projects.projects[0].labels.owner
