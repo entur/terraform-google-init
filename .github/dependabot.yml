@@ -18,11 +18,19 @@ updates:
   open-pull-requests-limit: 2
 - package-ecosystem: terraform
   directories:
-  - /examples/init
-  - /examples/init_test
-  - /modules/init
+  - /examples/*
   schedule:
     interval: "daily"
     time: "09:00"
     timezone: "Europe/Oslo"
   open-pull-requests-limit: 0  # Security-updates only
+- package-ecosystem: terraform
+  directories:
+  - /modules/*
+  schedule:
+    interval: "daily"
+    time: "09:00"
+    timezone: "Europe/Oslo"
+  open-pull-requests-limit: 0  # Security-updates only
+  commit-message:
+    prefix: "fix(deps):" # trigger new release when updating user-facing modules  
